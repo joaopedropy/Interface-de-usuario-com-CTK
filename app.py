@@ -22,7 +22,6 @@ class app:
         self.root = root
         self.screen()
         self.myappscreen()
-        self.animation()
         self.root.mainloop()
         
     def screen(self):
@@ -73,6 +72,14 @@ class app:
         
     # Main applications
     
+        self.button = CTkButton(
+            master=self.screenframe,
+            text="click me",
+            width=93,
+            height=40,
+            command=self.animation
+        ).place(anchor = CENTER, relx = 0.5, rely = 0.5)
+    
     def animation(self):
         
         self.point = CTkFrame(
@@ -84,7 +91,7 @@ class app:
             bg_color="#FFFFFF"
         ).place(x = 10, y = self.y)
                 
-        if self.x > 1060:
+        if self.x > 1059:
             self.acc = 0
             self.x = 1060
         else:
